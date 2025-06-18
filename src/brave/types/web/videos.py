@@ -1,5 +1,4 @@
-from typing import List
-from typing import Optional
+from typing import List, Union, Optional
 
 from pydantic import BaseModel
 from pydantic import Field
@@ -13,7 +12,7 @@ class VideoData(BaseModel):
     """A model representing metadata gathered for a video."""
 
     duration: Optional[str] = Field(default=None, description="A time string representing the duration of the video.")
-    views: Optional[str] = Field(default=None, description="The number of views of the video.")
+    views: Optional[int] = Field(default=None, description="The number of views of the video.")
     creator: Optional[str] = Field(default=None, description="The creator of the video.")
     publisher: Optional[str] = Field(default=None, description="The publisher of the video.")
     thumbnail: Optional[Thumbnail] = Field(default=None, description="A thumbnail associated with the video.")
